@@ -4,7 +4,7 @@
     "strategy_type": "long_only",
     "api_type": "alpaca",
     "ticker": "QQQ",
-    "entry_threshold": 0.0002,
+    "entry_threshold": 0.00005,
     "exit_threshold": 0.0,
     "position_size_pct": 0.01,
     "max_positions": 3,
@@ -17,44 +17,41 @@
     "use_trailing_stop": false,
     "trailing_stop_pct": null
   },
-
   "aggressive_long": {
-    "name": "Aggressive Long Momentum",
+    "name": "Aggressive Long Momentum (tuned)",
     "strategy_type": "long_only",
     "api_type": "alpaca",
     "ticker": "QQQ",
-    "entry_threshold": 0.0001,
-    "exit_threshold": -0.0001,
-    "position_size_pct": 0.02,
-    "max_positions": 5,
-    "stop_loss_pct": -0.005,
-    "take_profit_pct": 0.01,
-    "min_hold_minutes": 5,
-    "max_hold_minutes": 15,
-    "cooldown_minutes": 8,
-    "leverage": 1.0,
+    "entry_threshold": 0.00005,
+    "exit_threshold": -0.00003,
+    "position_size_pct": 0.10,
+    "max_positions": 1,
+    "stop_loss_pct": 0.0035,
+    "take_profit_pct": 0.0060,
+    "min_hold_minutes": 3,
+    "max_hold_minutes": 120,
+    "cooldown_minutes": 10,
+    "leverage": 10.0,
     "use_trailing_stop": true,
-    "trailing_stop_pct": 0.003
+    "trailing_stop_pct": 0.0020
   },
-
   "short_only_bear": {
-    "name": "Short Only Bearish",
-    "strategy_type": "short_only",
-    "api_type": "alpaca",
-    "ticker": "QQQ",
-    "entry_threshold": 0.0002,
-    "exit_threshold": 0.0,
-    "position_size_pct": 0.015,
-    "max_positions": 3,
-    "stop_loss_pct": -0.004,
-    "take_profit_pct": 0.007,
-    "min_hold_minutes": 8,
-    "max_hold_minutes": 18,
-    "cooldown_minutes": 12,
-    "leverage": 1.0,
-    "use_trailing_stop": false
-  },
-
+  "name": "Short Only Bearish (high frequency)",
+  "strategy_type": "short_only",
+  "api_type": "alpaca",
+  "ticker": "QQQ",
+  "entry_threshold": 0.00008,
+  "exit_threshold": 0.00003,
+  "position_size_pct": 0.02,
+  "max_positions": 3,
+  "stop_loss_pct": 0.0020,
+  "take_profit_pct": 0.0030,
+  "min_hold_minutes": 1,
+  "max_hold_minutes": 30,
+  "cooldown_minutes": 1,
+  "leverage": 1.0,
+  "use_trailing_stop": false
+},
   "cfd_2x_leverage": {
     "name": "CFD 2x Leveraged Long/Short",
     "strategy_type": "cfd_leveraged",
@@ -76,7 +73,6 @@
     "min_volatility": 0.005,
     "max_volatility": 0.03
   },
-
   "cfd_5x_scalping": {
     "name": "CFD 5x Scalping Strategy",
     "strategy_type": "cfd_leveraged",
@@ -97,7 +93,6 @@
     "min_volume": 2000000.0,
     "max_volatility": 0.025
   },
-
   "long_short_neutral": {
     "name": "Long/Short Market Neutral",
     "strategy_type": "long_short",

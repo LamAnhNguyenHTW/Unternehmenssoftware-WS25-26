@@ -86,8 +86,8 @@ class LongOnlyMomentumStrategy(TradingStrategy):
 
     def calculate_position_size(self, symbol: str, signal: float,
                                 account_equity: float, current_price: float) -> int:
-        """Calculate position size as % of equity"""
-        target_value = account_equity * self.config.position_size_pct
+        """Calculate position size as % of equity with leverage"""
+        target_value = account_equity * self.config.position_size_pct * self.config.leverage
         qty = int(target_value / current_price)
         return max(1, qty)
 
